@@ -1,0 +1,18 @@
+import java.util.Random;
+public class Paquet{
+    public static void main(String[] args){
+
+	Carte[] paquet32 = new Carte[32]; 
+	initialise(paquet32);
+	
+    }
+
+    void intialise(Carte[] cte){
+	for(int k=0; k<cte.length; k++){
+	    for(int i=0; i<4; i++){
+		for(int j=0; j<8; j++){
+		    cte[k]= new Carte(i,j);
+		}
+	    }
+	}
+    }
