@@ -30,6 +30,22 @@ public class EssaieCalendar {
 		date5.set(date5.YEAR, 2016);
 		System.out.println(date5.get(Calendar.DAY_OF_MONTH) + "/"+ (date5.get(Calendar.MONTH) + 1) + "/"+ date5.get(Calendar.YEAR));
 
+		if (date4.get(Calendar.MONTH) != date5.get(Calendar.MONTH)){
+			 if (date4.get(Calendar.MONTH) > date5.get(Calendar.MONTH)){
+				 System.out.println("Date4 > Date5");
+			 }else{
+				 System.out.println("Date5 > Date4");
+			 }
+		}else{
+			if (date4.get(Calendar.DAY_OF_MONTH) > date5.get(Calendar.DAY_OF_MONTH)){
+				 System.out.println("Date4 > Date5");
+			 }else{
+				 System.out.println("Date5 > Date4");
+			 }
+		}
+		
+		
+		
 	}
 
 }
