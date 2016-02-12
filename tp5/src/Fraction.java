@@ -1,5 +1,6 @@
 public class Fraction {
-	double num, den;
+	double num;
+	double den;
 
 	Fraction(double n, double d) {
 		this.num = n;
