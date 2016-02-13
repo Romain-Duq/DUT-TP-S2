@@ -41,8 +41,8 @@ public class EasyDate {
 		if (this.d.get(Calendar.DAY_OF_MONTH) == d2.d
 				.get(Calendar.DAY_OF_MONTH)
 				&& this.d.get(Calendar.MONTH) == d2.d.get(Calendar.MONTH)
-				&& this.d.get(Calendar.DAY_OF_MONTH) == d2.d
-						.get(Calendar.DAY_OF_MONTH)) {
+				&& this.d.get(Calendar.YEAR) == d2.d
+						.get(Calendar.YEAR)) {
 			return true;
 		} else {
 			return false;
@@ -50,10 +50,19 @@ public class EasyDate {
 	}
 
 	int compareTo(EasyDate d2) {
-		return (this.d.get(Calendar.DAY_OF_MONTH) + this.d.get(Calendar.MONTH)
-				* 30 + this.d.get(Calendar.DAY_OF_MONTH) * 365)
-				- (d2.d.get(Calendar.DAY_OF_MONTH) + d2.d.get(Calendar.MONTH)
-						* 30 + d2.d.get(Calendar.DAY_OF_MONTH) * 365);
+		if (this.d.get(Calendar.YEAR)>d2.d.get(Calendar.YEAR)){
+			return 1;
+		}else if(this.d.get(Calendar.YEAR)<d2.d.get(Calendar.YEAR)){
+			return -1;
+		}else if (this.d.get(Calendar.MONTH)>d2.d.get(Calendar.MONTH)){
+			return 1;
+		}else if (this.d.get(Calendar.MONTH)<d2.d.get(Calendar.MONTH)){
+			return -1;
+		}else if (this.d.get(Calendar.DAY_OF_MONTH)>d2.d.get(Calendar.DAY_OF_MONTH)){
+			return 1;
+		}else if (this.d.get(Calendar.DAY_OF_MONTH)<d2.d.get(Calendar.DAY_OF_MONTH)){
+			return -1;
+		}else return 0;
 	}
 
 }
