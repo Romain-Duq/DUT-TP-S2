@@ -36,6 +36,10 @@ public class Evenement {
 		return this.intitule.equals(e.intitule) && this.lieu.equals(e.lieu)
 				&& this.debut.equals(e.debut) && this.fin.equals(e.fin);
 	}
+	
+	boolean chevauchement(Evenement e){
+		return this.fin.after(e.debut) || this.debut.before(e.fin);
+	}
 
 	// test
 	public static void main(String[] args) {
