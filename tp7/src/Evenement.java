@@ -28,7 +28,7 @@ public class Evenement {
 				+ (this.debut.get(Calendar.MONTH) + 1) + "/"
 				+ this.debut.get(Calendar.YEAR) + " - "
 				+ +this.fin.get(Calendar.DAY_OF_MONTH) + "/"
-				+ (this.fin.get(Calendar.MONTH) + 1) + "/"
+				+ this.fin.get(Calendar.MONTH) + "/"
 				+ this.fin.get(Calendar.YEAR);
 	}
 

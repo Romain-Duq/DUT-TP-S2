@@ -7,27 +7,29 @@ public class Agenda extends Evenement{
 	public Agenda() {}
 	
 	boolean entrable(Evenement e){
-		for(Evenement ev : list){
+		for(Evenement ev : this.list){
 			if(e.chevauchement(ev)) return false;
 		}
 		return true;
 	}
 	
 	void entreeEvenement(Evenement e){
-		if(entrable(e)) list.add(e);
+		if(entrable(e)) this.list.add(e);
 	}
 	
 	void supprimerEvenement(Evenement e){
-		list.remove(list.lastIndexOf(e));
+		this.list.remove(this.list.lastIndexOf(e));
 	}
 	
 	void supprimerEvent(int i){
-		list.remove(i);
+		this.list.remove(i);
 	}
 	
 	void supprimerChevauchement(Evenement e){
-		for(Evenement ev : list){
-			if(e.chevauchement(ev)) supprimerEvenement(ev);
+		int i=0;
+		for(Evenement ev : this.list){
+			if(e.chevauchement(ev)) supprimerEvent(i);
+			i++;
 		}
 		entreeEvenement(e);
 	}
