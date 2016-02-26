@@ -1,17 +1,21 @@
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class Evenement {
 	String intitule = "", lieu = "";
 	GregorianCalendar debut, fin;
+	ArrayList<Contact> contact = new ArrayList<>();
 
 	public Evenement() {
 		this.debut = new GregorianCalendar();
 		this.fin = new GregorianCalendar();
+		this.contact.add(new Contact(null, null));
 	}
 
-	public Evenement(String i, String l, GregorianCalendar d,
+	public Evenement(String[] c, String[] e, String i, String l, GregorianCalendar d,
 			GregorianCalendar f) {
+		
 		this.intitule = i;
 		this.lieu = l;
 		this.debut = d;
@@ -38,19 +42,12 @@ public class Evenement {
 	}
 	
 	boolean chevauchement(Evenement e){
-		return this.fin.after(e.debut) || this.debut.before(e.fin);
+		boolean flag = false;
+		if(this.fin.after(e.debut)){
+			flag=true;
+		}else if(this.debut.before(e.fin) && this.fin.after(e.debut)){
+			flag=true;
+		}
+		return flag;
 	}
-
-	// test
-	public static void main(String[] args) {
-		Evenement e = new Evenement("test", "imaginaire",
-				new GregorianCalendar(2016, 2, 13), new GregorianCalendar(2016, 3, 13));
-		System.out.println(e.toString());
-		
-		System.out.println(e.equals(new Evenement("test", "imaginaire",
-				new GregorianCalendar(2016, 2, 13), new GregorianCalendar(2016, 3, 13))));
-		System.out.println(e.equals(new Evenement("test", "imaginaire",
-				new GregorianCalendar(2016, 1, 13), new GregorianCalendar(2016, 3, 13))));
-	}
-
 }

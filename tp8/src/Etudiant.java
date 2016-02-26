@@ -15,7 +15,7 @@ public class Etudiant {
 	
 	public String toString(){
 		String s=this.nom+"\n";
-		Set listKeys=list.keySet();
+		Set listKeys=list.keySet(); 
 		Iterator iterateur=listKeys.iterator();
 		
 		while(iterateur.hasNext())
