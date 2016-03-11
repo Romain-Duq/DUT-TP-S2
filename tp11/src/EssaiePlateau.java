@@ -1,7 +1,4 @@
-import java.util.Iterator;
 import java.util.Random;
-
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter.DEFAULT;
 
 public class EssaiePlateau {
 	public static void main(String[] args) {

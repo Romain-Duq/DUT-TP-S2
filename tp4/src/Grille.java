@@ -58,7 +58,7 @@ public class Grille {
 	}
 
 	void fenetre(int left, int top) {
-		Tableau fenetre = new Tableau(left, top, this.tab);
+		//Tableau fenetre = new Tableau(left, top, this.tab);
 	}
 
 	boolean recherche(int test) {
