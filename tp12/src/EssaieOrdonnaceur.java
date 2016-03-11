@@ -22,6 +22,18 @@ public class EssaieOrdonnaceur {
 			System.out.println(file.plusPrioritaire().toString());
 		}
 		
+		System.out.println("\n");
+		//avec priorite
+		OrdoAvecPriorite file2 = new OrdoAvecPriorite();
+		file2.ajout(t1);
+		file2.ajout(t2);
+		file2.ajout(t3);
+		file2.ajout(t4);
+		file2.ajout(t5);
+		file2.ajout(t6);
 		
+		for(int i=0; i<6; i++){
+			System.out.println(file2.envoie().toString());
+		}
 	}
 }
